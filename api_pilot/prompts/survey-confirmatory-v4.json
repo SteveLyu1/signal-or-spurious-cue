@@ -1,0 +1,59 @@
+{
+  "version": "survey-confirmatory-v4",
+  "status": "prospectively frozen before confirmatory outcomes; requires v4 transfer Gate",
+  "frozen_at": "2026-07-25T10:21:53+08:00",
+  "amendment": {
+    "supersedes_for_confirmatory_use": "survey-confirmatory-v3",
+    "reason": "MO and MR now name the same candidate-country set and use parallel sentence structure so their contrast isolates disclosed selection provenance more closely.",
+    "confirmatory_llm_outcomes_observed_before_change": false,
+    "completed_v3_gate_c_outputs_are_development_only": true
+  },
+  "system_prompt": "Forecast the masked answers for one anonymous survey record from the information supplied in the request. For each masked item, estimate a probability distribution over the displayed response options. Return elicited probabilities, not a chosen answer or an explanation. Return one JSON object matching the response contract.",
+  "user_template": "Task: Forecast the masked answers for this anonymous survey record from the information supplied below. For each masked item, return a probability distribution over the displayed response options.\n<<METADATA_BLOCK>><prior_answers>\n<<PRIOR_ANSWERS>>\n</prior_answers>\n<masked_targets>\n<<MASKED_TARGETS>>\n</masked_targets>\nJSON contract: return only an object with key `forecasts`. Its value is an object keyed by the <<TARGET_COUNT>> masked item IDs. Each value is a finite probability array in displayed response-option order, with entries in [0,1] summing to 1. Required lengths: <<CONTRACT>>.",
+  "conditions": {
+    "M0": "",
+    "MO": "Survey-country label: <<RANDOM_COUNTRY>>\nThis label takes one value from the candidate set <<CANDIDATE_COUNTRIES>>. The selection probabilities and any relationship between the label and the source survey record are not provided.",
+    "MR": "Survey-country label: <<RANDOM_COUNTRY>>\nThis label takes one value from the candidate set <<CANDIDATE_COUNTRIES>>. Each candidate was selected with equal probability, independently of the source survey record.",
+    "MV": "Survey country: <<TRUE_COUNTRY>>\nThis value was copied from the source survey record and identifies the country in which the data were collected."
+  },
+  "render": {
+    "include_evidence_code": true,
+    "evidence_scale_mode": "numeric_only",
+    "include_target_codes": true
+  },
+  "items": {
+    "A006": {"question": "How important is religion in your life?", "scale": "1 = Very important; 2 = Rather important; 3 = Not very important; 4 = Not at all important."},
+    "A165": {"question": "Generally speaking, can most people be trusted, or can you not be too careful?", "scale": "1 = Most people can be trusted; 2 = Can't be too careful."},
+    "B008": {"question": "Which should have priority: protecting the environment, or economic growth and jobs?", "scale": "1 = Protecting environment; 2 = Economic growth and creating jobs; 3 = Other answer."},
+    "C001": {"question": "When jobs are scarce, should men have more right to a job than women?", "scale": "1 = Agree; 2 = Disagree; 3 = Neither."},
+    "C039": {"question": "Work is a duty towards society.", "scale": "1 = Strongly agree; 2 = Agree; 3 = Neither agree nor disagree; 4 = Disagree; 5 = Strongly disagree."},
+    "D059": {"question": "On the whole, men make better political leaders than women do.", "scale": "1 = Agree strongly; 2 = Agree; 3 = Disagree; 4 = Strongly disagree."},
+    "E023": {"question": "How interested are you in politics?", "scale": "1 = Very interested; 2 = Somewhat interested; 3 = Not very interested; 4 = Not at all interested."},
+    "E035": {"question": "Should incomes be made more equal, or should there be larger income differences as incentives?", "scale": "1 = Incomes should be made more equal; 10 = Larger income differences are needed as incentives; 2-9 = intermediate positions.", "numeric_scale": true},
+    "E037": {"question": "Should people take more responsibility to provide for themselves, or should government take more responsibility?", "scale": "1 = People should take more responsibility; 10 = Government should take more responsibility; 2-9 = intermediate positions.", "numeric_scale": true},
+    "F063": {"question": "How important is God in your life?", "scale": "1 = Not at all important; 10 = Very important; 2-9 = intermediate positions.", "numeric_scale": true},
+    "A004": {"question": "How important is politics in your life?", "scale": "1 = Very important; 2 = Rather important; 3 = Not very important; 4 = Not at all important."},
+    "A005": {"question": "How important is work in your life?", "scale": "1 = Very important; 2 = Rather important; 3 = Not very important; 4 = Not at all important."},
+    "A029": {"question": "Is independence an especially important quality for children to learn at home?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A030": {"question": "Is hard work an especially important quality for children to learn at home?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A039": {"question": "Is determination and perseverance an especially important quality for children to learn at home?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A042": {"question": "Is obedience an especially important quality for children to learn at home?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A124_03": {"question": "Would you identify heavy drinkers as people you would not like as neighbours?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A124_06": {"question": "Would you identify immigrants or foreign workers as people you would not like as neighbours?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A124_08": {"question": "Would you identify drug addicts as people you would not like as neighbours?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "A124_09": {"question": "Would you identify homosexuals as people you would not like as neighbours?", "scale": "0 = Not mentioned; 1 = Mentioned."},
+    "D060": {"question": "Do you agree or disagree that a university education is more important for a boy than for a girl?", "scale": "1 = Agree strongly; 2 = Agree; 3 = Disagree; 4 = Strongly disagree."},
+    "D061": {"question": "Do you agree or disagree that a pre-school child is likely to suffer if his or her mother works?", "scale": "1 = Agree strongly; 2 = Agree; 3 = Disagree; 4 = Strongly disagree."},
+    "D078": {"question": "Do you agree or disagree that men make better business executives than women do?", "scale": "1 = Agree strongly; 2 = Agree; 3 = Disagree; 4 = Strongly disagree."},
+    "E012": {"question": "Would you be willing to fight for your country?", "scale": "0 = No; 1 = Yes."},
+    "E018": {"question": "Would greater respect for authority be a good thing, something you would not mind, or a bad thing?", "scale": "1 = Good thing; 2 = Would not mind; 3 = Bad thing."},
+    "E025": {"question": "Have you signed a petition, might you do so, or would you never do so?", "scale": "1 = Have done; 2 = Might do; 3 = Would never do."},
+    "E026": {"question": "Have you joined in boycotts, might you do so, or would you never do so?", "scale": "1 = Have done; 2 = Might do; 3 = Would never do."},
+    "E027": {"question": "Have you attended a lawful peaceful demonstration, might you do so, or would you never do so?", "scale": "1 = Have done; 2 = Might do; 3 = Would never do."}
+    ,"E036": {"question": "Should private ownership of business be increased, or should government ownership be increased?", "scale": "1 = Private ownership of business should be increased; 10 = Government ownership of business should be increased; 2-9 = intermediate positions.", "numeric_scale": true}
+    ,"E039": {"question": "Is competition good or harmful?", "scale": "1 = Competition is good; 10 = Competition is harmful; 2-9 = intermediate positions.", "numeric_scale": true}
+    ,"F118": {"question": "How justifiable is homosexuality?", "scale": "1 = Never justifiable; 10 = Always justifiable; 2-9 = intermediate positions.", "numeric_scale": true}
+    ,"F120": {"question": "How justifiable is abortion?", "scale": "1 = Never justifiable; 10 = Always justifiable; 2-9 = intermediate positions.", "numeric_scale": true}
+    ,"F121": {"question": "How justifiable is divorce?", "scale": "1 = Never justifiable; 10 = Always justifiable; 2-9 = intermediate positions.", "numeric_scale": true}
+  }
+}
