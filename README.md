@@ -76,6 +76,20 @@ If you use this repository or the study methodology, cite the accompanying prepr
 
 > Lyu, Y., Li, X., Qiao, J., & Xu, X. (2026). *Signal or Spurious Cue? A Randomized Audit of Survey-Country Metadata in LLM Social Inference*. arXiv:2608.06085.
 
+BibTeX:
+
+```bibtex
+@misc{lyu2026signalspuriouscue,
+  title         = {Signal or Spurious Cue? A Randomized Audit of Survey-Country Metadata in LLM Social Inference},
+  author        = {Yifan Lyu and Xinran Li and Jiaqi Qiao and Xiujuan Xu},
+  year          = {2026},
+  eprint        = {2608.06085},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2608.06085}
+}
+```
+
 See [CITATION.cff](CITATION.cff) for machine-readable repository citation metadata.
 
 ## License
