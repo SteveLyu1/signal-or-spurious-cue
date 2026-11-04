@@ -21,9 +21,7 @@ api_pilot/progress/
 api_pilot/reports/
 api_pilot/human_review/
 
-# Paper and local build state
-paper/
-AuthorKit27/
+# Local build state
 build/
 tmp/
 .venv/
