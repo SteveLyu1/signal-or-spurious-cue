@@ -1,22 +1,12 @@
 # Signal or Spurious Cue: Experimental Code
 
-Private source repository for the survey-country metadata audit. It contains
-the experiment runners, provider adapters, checkpoint/recovery logic,
-statistical analysis code, prompt bundles, data-construction utilities,
-automation scripts, and tests.
+This repository contains the implementation for the survey-country metadata audit, including experiment runners, provider adapters, checkpoint/recovery logic, statistical analysis, prompt bundles, data-construction utilities, automation scripts, and tests.
 
-## Excluded material
+## Data and reproducibility
 
-This repository intentionally excludes author information, API credentials,
-the Joint EVS/WVS source data, respondent-derived profiles, frozen task
-manifests containing record-level task units, model outputs, checkpoints,
-logs, generated reports, paper sources, and LaTeX build files. Those materials
-must remain in separately controlled storage.
+The Joint EVS/WVS source data, respondent-derived profiles, experiment manifests, model outputs, checkpoints, and generated reports are not included in this repository.
 
-The code creates generated directories as needed. To reproduce a study run,
-obtain Joint EVS/WVS 2017-2022 v5.0 under its distributor's terms, construct
-the restricted profiles and manifests with the included tools, and provide
-provider credentials through process environment variables only.
+To reproduce a study run, obtain Joint EVS/WVS 2017-2022 v5.0 under its distributor's terms, construct the required profiles and manifests using the included tools, and provide API credentials through process environment variables.
 
 ## Environment
 
@@ -30,10 +20,10 @@ python -m venv .venv
   dataset\tests\test_build_pilot_gate.py -q
 ```
 
-The complete test suite also audits frozen manifests, respondent-derived
+The complete test suite also audits experiment manifests, respondent-derived
 profiles, checkpoints, model outputs, and generated reports. Those integration
-tests require the separately controlled private fixtures and are not expected
-to pass in this source-only repository.
+tests require additional datasets and generated fixtures that are not included
+in this repository.
 
 Supported credential variables include `OPENAI_API_KEY`,
 `DEEPSEEK_API_KEY`, `MISTRAL_API_KEY`, `GEMINI_API_KEY`, and `QWEN_API_KEY`.
@@ -52,5 +42,3 @@ or commit a plaintext key file.
 - `dataset/tools/`: source validation and profile/manifest preparation.
 - `api_pilot/tests/` and `dataset/tests/`: unit and pipeline tests.
 
-No public code licence has been selected. The repository must remain private
-until a licence and public-release boundary are approved.
