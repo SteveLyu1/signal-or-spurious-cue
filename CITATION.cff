@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "For scientific use, please also cite the accompanying arXiv preprint (arXiv:2608.06085)."
+title: "Signal or Spurious Cue? Research Code for Survey-Country Metadata Auditing"
+authors:
+  - family-names: Lyu
+    given-names: Yifan
+repository-code: "https://github.com/SteveLyu1/signal-or-spurious-cue"
+url: "https://arxiv.org/abs/2608.06085"
+abstract: >-
+  Research code for a controlled, within-record evaluation of how
+  survey-country metadata provenance affects large language model forecasts.
